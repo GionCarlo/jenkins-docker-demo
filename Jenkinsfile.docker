@@ -6,11 +6,12 @@ pipeline {
         IMAGE_NAME = 'gioncarlo/jenkins-docker-demo'
     }
 
-   stage('Clone Repo') {
-    steps {
-        git branch: 'main', url: 'https://github.com/gioncarlo/jenkins-docker-demo.git'
-    }
-}
+    stages {
+        stage('Clone Repo') {
+            steps {
+                git branch: 'main', url: 'https://github.com/gioncarlo/jenkins-docker-demo.git'
+            }
+        }
 
         stage('Build Docker Image') {
             steps {
